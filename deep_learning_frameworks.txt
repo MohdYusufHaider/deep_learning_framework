@@ -1,0 +1,126 @@
+Q1. What is TensorFlow 2.0, and how is it different from TensorFlow1.x
+Ans.
+1. What is TensorFlow 2.0, and how is it different from TensorFlow 1.x?
+TensorFlow 2.0 is an upgraded version of TensorFlow with a focus on ease of use and simplicity. Key differences:
+
+Eager Execution is enabled by default.
+tf.keras is the central high-level API.
+The tf.function decorator enables graph execution for performance optimization.
+Simplified model building and debugging
+
+Q2.How do you install TensorFlow 2.02
+Ans.
+pip install tensorflow
+
+
+Q3.What is the primary function of the tf.function in TensorFlow 2.02
+Ans.
+tf.function converts Python functions into TensorFlow graphs for faster execution:
+
+
+Q4.What is the purpose of the Model class in TensorFlow 2.02
+Ans.
+The Model class, typically from tf.keras, provides a high-level interface to build and train neural networks.
+
+
+Q5.How do you create a neural network using TensorFlow 2.02
+Ans.
+import tensorflow as tf
+from tensorflow.keras import Sequential
+from tensorflow.keras.layers import Dense
+
+model = Sequential([
+    Dense(64, activation='relu', input_shape=(10,)),
+    Dense(1, activation='sigmoid')
+])
+model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+model.fit(x_train, y_train, epochs=10)
+
+
+Q6. What is the importance of Tensor Space in TensorFlow2
+Ans.
+Tensor Space represents multi-dimensional arrays used for computations in TensorFlow, enabling efficient operations on data structures like scalars, vectors, and matrices.
+
+
+Q7. How can TensorBoard be integrated with TensorFlow 2.02
+Ans.
+tensorboard_callback = tf.keras.callbacks.TensorBoard(log_dir="./logs")
+model.fit(x_train, y_train, epochs=10, callbacks=[tensorboard_callback])
+
+Q8. What is the purpose of TensorFlow Playground2
+Ans.
+TensorFlow Playground is a web-based tool to visualize and experiment with neural networks interactively: TensorFlow Playground
+
+Q9. What is Netron, and how is it useful for deep learning models2
+Ans.
+Netron is a visual tool for inspecting neural network models (e.g., TensorFlow, ONNX). It helps debug and understand model architectures. Download: Netron
+
+Q10. What is the difference between TensorFlow and PyTorch2
+Ans.
+1. What is the difference between TensorFlow and PyTorch?
+TensorFlow: Graph-based execution, strong deployment support.
+PyTorch: Dynamic computation graphs (eager execution), simpler for research and debugging.
+
+
+Q11. How do you install PyTorch2
+Ans.
+pip install torch torchvision torchaudio
+
+Q12. What is the basic structure of a PyTorch neural network2
+Ans.
+import torch.nn as nn
+
+class SimpleNN(nn.Module):
+    def __init__(self):
+        super(SimpleNN, self).__init__()
+        self.fc = nn.Linear(10, 1)
+
+    def forward(self, x):
+        return self.fc(x)
+
+
+Q14. What is the significance of tensors in PyTorch2
+Ans.
+Tensors are multi-dimensional arrays, similar to NumPy arrays, but optimized for GPU acceleration.
+
+
+Q15. What is the difference between torch.Tensor and torch.cuda.Tensor in PyTorch2
+Ans.
+torch.Tensor: CPU-based tensor.
+torch.cuda.Tensor: GPU-based tensor for faster computations.
+
+Q16. What is the purpose of the torch.optim module in PyTorch2
+Ans.
+torch.optim provides optimizers (e.g., SGD, Adam) for training neural networks.
+
+
+Q17. What are some common activation functions used in neural networks2
+Ans.
+ReLU: nn.ReLU()
+Sigmoid: nn.Sigmoid()
+Tanh: nn.Tanh()
+Softmax: nn.Softmax(dim=1)
+
+Q18. What is the difference between torch.nn.Module and torch.nn.Sequential in PyTorch2
+Ans.
+torch.nn.Module: Base class for all custom models.
+torch.nn.Sequential: A container to stack layers in order.
+
+
+Q19. How can you monitor training progress in TensorFlow 2.02
+Ans.
+training metrics,callbacks,tensorboard,
+
+Q20. How does the Keras API fit into TensorFlow 2.02
+Ans.
+In TensorFlow 2.0, Keras is integrated as the official high-level API, providing a user-friendly interface for building, training, and deploying models. The Keras API simplifies common tasks and makes TensorFlow more accessible.
+
+Q21. What is an example of a deep learning project that can be implemented using TensorFlow 2.02
+Ans.One example is a handwritten digit classification project using the MNIST dataset. This project demonstrates image classification with a simple neural network.
+import tensorflow as tf
+from tensorflow.keras import Sequential
+from tensorflow.keras.layers import Dense, Flatten
+from tensorflow.keras.datasets import mnist
+
+
+Q22. What is the main advantage of using pre-trained models in TensorFlow and PyTorch?
